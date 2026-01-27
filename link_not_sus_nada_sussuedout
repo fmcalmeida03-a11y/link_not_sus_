@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Para a minha Valentine 💌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .envelope {
+      width: 260px;
+      height: 180px;
+      background: #fff;
+      position: relative;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .envelope::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #f8b5c1;
+      clip-path: polygon(0 0, 100% 0, 50% 60%);
+    }
+
+    .letter {
+      position: absolute;
+      width: 240px;
+      height: 300px;
+      background: #fff;
+      top: 20px;
+      left: 10px;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      text-align: center;
+      transform: translateY(200px);
+      transition: 0.8s;
+      display: none;
+    }
+
+    .letter.show {
+      display: block;
+      transform: translateY(-160px);
+    }
+
+    h2 {
+      color: #e75480;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background: #ff5e8a;
+      color: white;
+    }
+
+    .no {
+      background: #ccc;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #e75480;
+    }
+
+    .stickers {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      font-size: 32px;
+    }
+
+    .heart {
+      position: absolute;
+      color: red;
+      animation: float 4s infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-600px); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="envelope" onclick="openLetter()"></div>
+
+  <div class="letter" id="letter">
+    <h2>💌 Para ti</h2>
+    <p>Queres ser a minha Valentine?</p>
+
+    <button class="yes" onclick="answer(true)">Sim 💖</button>
+    <button class="no" onclick="answer(false)">Não 🙈</button>
+
+    <div class="result" id="result"></div>
+
+    <div class="stickers">
+      🐻 💕 🐱 🌸
+    </div>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById("letter").classList.add("show");
+    }
+
+    function answer(isYes) {
+      const result = document.getElementById("result");
+      if (isYes) {
+        result.innerHTML = "Sabia 😍 Prometo fazer-te muito feliz 💖";
+        createHearts();
+      } else {
+        result.innerHTML = "Opção inválida 😌 tenta outra vez!";
+      }
+    }
+
+    function createHearts() {
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "0px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 4000);
+      }
+    }
+  </script>
+
+</body>
+</html>
