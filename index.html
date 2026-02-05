@@ -46,8 +46,8 @@
 
   .letter {
     position: absolute;
-    width: 340px;
-    min-height: 440px;
+    width: 350px;
+    min-height: 480px;
     background: white;
     border-radius: 20px;
     padding: 25px;
@@ -99,11 +99,23 @@
     color: #e75480;
   }
 
+  /* Stickers */
   .stickers {
-    margin-top: 30px;
-    font-size: 36px;
+    margin-top: 25px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+  }
+
+  .stickers img {
+    width: 80px;
+    animation: floaty 3s ease-in-out infinite;
+  }
+
+  @keyframes floaty {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
   }
 
   .heart {
@@ -126,7 +138,7 @@
 </div>
 
 <div class="letter" id="letter">
-  <h2>Para a Patrícia 💖</h2>
+  <h2>Para a Patrícia (minha pooks) 💖</h2>
 
   <p id="question">
     Queres ser a minha Valentine? 💘
@@ -140,7 +152,9 @@
   <div class="message" id="message"></div>
 
   <div class="stickers">
-    🐾 🐷 🔥
+    <img src="https://i.imgur.com/0Z8FQ9U.png" alt="Stitch">
+    <img src="https://i.imgur.com/yo6Z9nO.png" alt="Pua">
+    <img src="https://i.imgur.com/5JZp7ZL.png" alt="Bruni">
   </div>
 </div>
 
@@ -155,7 +169,6 @@
   function openLetter() {
     letter.classList.add("show");
 
-    // Durante 5 segundos o botão foge
     setTimeout(() => {
       dodge = false;
     }, 5000);
@@ -182,7 +195,7 @@
   });
 
   function answerYes() {
-    message.innerHTML = "Frase bonita aqui 💖 (depois mudas)";
+    message.innerHTML = " YEYYYYY, i had a feeling u would say yes hihihih 💖, i´ll see you in PARIS 🗼🇫🇷🌍  ";
     createHearts();
   }
 
