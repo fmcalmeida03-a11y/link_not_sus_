@@ -1,126 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<title>Para a Patrícia 💖</title>
+  <meta charset="UTF-8">
+  <title>Teste Valentine</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: pink;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
 
-<style>
-  * {
-    box-sizing: border-box;
-  }
+    .box {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
 
-  body {
-    margin: 0;
-    height: 100vh;
-    font-family: 'Poppins', Arial, sans-serif;
-    background: linear-gradient(135deg, #ffb6c1, #ffd1dc);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  /* Envelope */
-  .envelope {
-    width: 300px;
-    height: 200px;
-    background: #fff;
-    border-radius: 12px;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-    transition: transform 0.3s;
-  }
-
-  .envelope:hover {
-    transform: scale(1.05);
-  }
-
-  .envelope::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #ff8fab;
-    clip-path: polygon(0 0, 100% 0, 50% 60%);
-    border-radius: 12px;
-  }
-
-  .envelope span {
-    position: absolute;
-    bottom: 15px;
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    color: #e75480;
-    font-weight: bold;
-  }
-
-  /* Carta */
-  .letter {
-    position: absolute;
-    width: 320px;
-    min-height: 420px;
-    background: #fff;
-    border-radius: 18px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    transform: translateY(250px) scale(0.9);
-    opacity: 0;
-    transition: 0.9s ease;
-  }
-
-  .letter.show {
-    transform: translateY(-40px) scale(1);
-    opacity: 1;
-  }
-
-  h2 {
-    color: #e75480;
-    margin-top: 5px;
-  }
-
-  p {
-    font-size: 18px;
-    margin: 20px 0;
-  }
-
-  .buttons {
-    margin-top: 20px;
-  }
-
-  button {
-    padding: 12px 22px;
-    font-size: 16px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    margin: 8px;
-  }
-
-  .yes {
-    background: #ff5e8a;
-    color: white;
-  }
-
-  .no {
-    background: #ddd;
-    position: relative;
-  }
-
-  .result {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #e75480;
-  }
-
-  /* Stickers */
-  .stickers {
-    margin-top: 25px;
-    font-size: 36px;
-    display: flex;
-    justify-content: space-around;
-  }
+  <div class="box">
+    SE ESTÁS A VER ISTO, FUNCIONA 💖
+  </div>
 
 </body>
 </html>
