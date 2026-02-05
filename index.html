@@ -1,217 +1,171 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<title>Para a Patrícia 💖</title>
+  <meta charset="UTF-8">
+  <title>Valentine 💘</title>
 
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    font-family: 'Poppins', Arial, sans-serif;
-    background: linear-gradient(135deg, #ffb6c1, #ffd1dc);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ffd1dc, #ffe6eb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-  .envelope {
-    width: 300px;
-    height: 200px;
-    background: white;
-    border-radius: 12px;
-    cursor: pointer;
-    position: relative;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-  }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      position: relative;
+    }
 
-  .envelope::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #ff8fab;
-    clip-path: polygon(0 0, 100% 0, 50% 60%);
-    border-radius: 12px;
-  }
+    h1 {
+      color: #ff4f7a;
+      margin-bottom: 10px;
+    }
 
-  .envelope span {
-    position: absolute;
-    bottom: 15px;
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    color: #e75480;
-  }
+    p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
 
-  .letter {
-    position: absolute;
-    width: 350px;
-    min-height: 480px;
-    background: white;
-    border-radius: 20px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    transform: translateY(300px);
-    opacity: 0;
-    transition: 0.8s;
-  }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
 
-  .letter.show {
-    transform: translateY(-40px);
-    opacity: 1;
-  }
+    button {
+      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
 
-  h2 {
-    color: #e75480;
-  }
+    #yesBtn {
+      background: #ff4f7a;
+      color: white;
+    }
 
-  .buttons {
-    margin-top: 20px;
-    position: relative;
-    height: 120px;
-  }
+    #noBtn {
+      background: #ddd;
+      position: relative;
+    }
 
-  button {
-    padding: 12px 22px;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-    position: absolute;
-  }
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ff4f7a;
+      min-height: 40px;
+    }
 
-  .yes {
-    background: #ff5e8a;
-    color: white;
-    left: 40px;
-  }
+    .stickers {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
 
-  .no {
-    background: #ddd;
-    right: 40px;
-  }
+    .stickers img {
+      width: 60px;
+      animation: float 3s ease-in-out infinite;
+    }
 
-  .message {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #e75480;
-  }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
 
-  /* Stickers */
-  .stickers {
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+    .heart {
+      position: absolute;
+      font-size: 24px;
+      animation: rise 4s linear forwards;
+    }
 
-  .stickers img {
-    width: 80px;
-    animation: floaty 3s ease-in-out infinite;
-  }
-
-  @keyframes floaty {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-  }
-
-  .heart {
-    position: absolute;
-    font-size: 24px;
-    animation: float 4s linear forwards;
-  }
-
-  @keyframes float {
-    from { transform: translateY(0); opacity: 1; }
-    to { transform: translateY(-600px); opacity: 0; }
-  }
-</style>
+    @keyframes rise {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="envelope" onclick="openLetter()">
-  <span>Clica para abrir 💌</span>
-</div>
+  <div class="card">
+    <h1>Para a Patrícia 💖</h1>
+    <p>Queres ser a minha Valentine? 💌</p>
 
-<div class="letter" id="letter">
-  <h2>Para a Patrícia (minha pooks) 💖</h2>
+    <div class="buttons">
+      <button id="yesBtn" onclick="answerYes()">Sim 💘</button>
+      <button id="noBtn">Não 🙈</button>
+    </div>
 
-  <p id="question">
-    Queres ser a minha Valentine? 💘
-  </p>
+    <div class="message" id="message"></div>
 
-  <div class="buttons">
-    <button class="yes" onclick="answerYes()">Sim 💕</button>
-    <button class="no" id="noBtn">Não 🙈</button>
+    <div class="stickers">
+      <img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Stitch_%28Lilo_%26_Stitch%29.svg" alt="Stitch">
+      <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Pua_Moana.png" alt="Pua">
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/0f/Bruni_Frozen_2.png" alt="Bruni">
+    </div>
   </div>
 
-  <div class="message" id="message"></div>
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const message = document.getElementById("message");
 
-  <div class="stickers">
-    <img src="https://i.imgur.com/0Z8FQ9U.png" alt="Stitch">
-    <img src="https://i.imgur.com/yo6Z9nO.png" alt="Pua">
-    <img src="https://i.imgur.com/5JZp7ZL.png" alt="Bruni">
-  </div>
-</div>
-
-<script>
-  const letter = document.getElementById("letter");
-  const noBtn = document.getElementById("noBtn");
-  const message = document.getElementById("message");
-
-  let dodge = true;
-  let dodgeForever = false;
-
-  function openLetter() {
-    letter.classList.add("show");
+    let canRun = true;
+    let impossible = false;
 
     setTimeout(() => {
-      dodge = false;
+      canRun = false;
     }, 5000);
-  }
 
-  noBtn.addEventListener("mouseover", () => {
-    if (dodge || dodgeForever) {
-      const x = Math.random() * 200 - 100;
-      const y = Math.random() * 80 - 40;
-      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    noBtn.addEventListener("mouseover", () => {
+      if (canRun && !impossible) {
+        const x = Math.random() * 300 - 150;
+        const y = Math.random() * 200 - 100;
+        noBtn.style.transform = `translate(${x}px, ${y}px)`;
+      }
+    });
+
+    noBtn.addEventListener("click", () => {
+      if (!impossible) {
+        message.textContent = "Achavas mesmo que era tão fácil de recusar? 😏";
+
+        setTimeout(() => {
+          message.textContent = "";
+          noBtn.style.opacity = "0";
+          noBtn.style.pointerEvents = "none";
+          impossible = true;
+        }, 2000);
+      }
+    });
+
+    function answerYes() {
+      message.textContent = "YEYYYYY, i had a feeling u would say yes hihihih 💖, i´ll see you in PARIS 🗼🇫🇷🌍";
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.textContent = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "0";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+      }
     }
-  });
-
-  noBtn.addEventListener("click", () => {
-    if (!dodgeForever) {
-      message.innerHTML = "Achavas mesmo que era tão fácil de recusar? 😌";
-
-      setTimeout(() => {
-        message.innerHTML = "";
-        noBtn.style.transform = "translate(0,0)";
-        dodgeForever = true;
-      }, 2000);
-    }
-  });
-
-  function answerYes() {
-    message.innerHTML = " YEYYYYY, i had a feeling u would say yes hihihih 💖, i´ll see you in PARIS 🗼🇫🇷🌍  ";
-    createHearts();
-  }
-
-  function createHearts() {
-    for (let i = 0; i < 25; i++) {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "❤️";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.bottom = "0px";
-      document.body.appendChild(heart);
-
-      setTimeout(() => heart.remove(), 4000);
-    }
-  }
-</script>
+  </script>
 
 </body>
 </html>
