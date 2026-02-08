@@ -1,4 +1,4 @@
-o<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
@@ -72,11 +72,11 @@ o<!DOCTYPE html>
       display: flex;
       justify-content: center;
       gap: 18px;
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
     .stickers img {
-      width: 65px;
+      width: 70px;
       animation: float 3s ease-in-out infinite;
     }
 
@@ -113,9 +113,9 @@ o<!DOCTYPE html>
     <div class="message" id="message"></div>
 
     <div class="stickers">
-      <img src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/64/heart.png" alt="Stitch">
-      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f437.png" alt="Pua">
-      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f9da.png" alt="Bruni">
+      <img src="images/stitch.png" alt="Stitch">
+      <img src="images/pua.png" alt="Pua">
+      <img src="images/bruni.png" alt="Bruni">
     </div>
   </div>
 
@@ -140,7 +140,7 @@ o<!DOCTYPE html>
 
     noBtn.addEventListener("click", () => {
       if (!impossible) {
-        message.textContent = "Achavas mesmo que te livravas de mim tão facilmente? 😏";
+        message.textContent = "Achavas mesmo que te livravas de mim assim tão facilmente? 😏";
 
         setTimeout(() => {
           message.textContent = "";
@@ -152,7 +152,7 @@ o<!DOCTYPE html>
     });
 
     function answerYes() {
-      message.textContent = "YEYYYY, i had a feeling u would say yes hihihihiih 💖, i´ll see u in Paris 🗼🇫🇷🌍";
+      message.textContent = "YEYYYY, i had a feeling u would say yes hihihihihih💖, i,ll see u in Paris 🗼🇫🇷🌍";
       for (let i = 0; i < 30; i++) {
         const heart = document.createElement("div");
         heart.className = "heart";
